@@ -1,0 +1,15 @@
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\bin\Debug\net10.0\2)IndexerOverloading.exe
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\bin\Debug\net10.0\2)IndexerOverloading.deps.json
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\bin\Debug\net10.0\2)IndexerOverloading.runtimeconfig.json
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\bin\Debug\net10.0\2)IndexerOverloading.dll
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\bin\Debug\net10.0\2)IndexerOverloading.pdb
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\obj\Debug\net10.0\2)IndexerOverloading.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\obj\Debug\net10.0\2)IndexerOverloading.AssemblyInfoInputs.cache
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\obj\Debug\net10.0\2)IndexerOverloading.AssemblyInfo.cs
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\obj\Debug\net10.0\2)IndexerOverloading.csproj.CoreCompileInputs.cache
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\obj\Debug\net10.0\2)IndexerOverloading.sourcelink.json
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\obj\Debug\net10.0\2)IndexerOverloading.dll
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\obj\Debug\net10.0\refint\2)IndexerOverloading.dll
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\obj\Debug\net10.0\2)IndexerOverloading.pdb
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\obj\Debug\net10.0\2)IndexerOverloading.genruntimeconfig.cache
+C:\Users\Vlada\Desktop\IThub programming\2)IndexerOverloading\2)IndexerOverloading\obj\Debug\net10.0\ref\2)IndexerOverloading.dll
