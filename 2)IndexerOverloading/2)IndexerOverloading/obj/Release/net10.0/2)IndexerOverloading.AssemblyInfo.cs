@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("2)IndexerOverloading")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5526fefa4608090c416373b1c47a4c6c20e3c77e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+844288c44c154990e2c8acdf1e4e8622d9e557b4")]
 [assembly: System.Reflection.AssemblyProductAttribute("2)IndexerOverloading")]
 [assembly: System.Reflection.AssemblyTitleAttribute("2)IndexerOverloading")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
