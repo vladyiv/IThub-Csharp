@@ -11,7 +11,7 @@ namespace ExceptionsHierarchy
             UserService myUserService = new UserService();
 
             Console.WriteLine(myUserService.GetUserAgeSafe(1)); // вернёт 18
-            Console.WriteLine(myUserService.GetUserAgeSafe(10)); // выдаст ошибку InvalidOperationException с нашим комментарием
+            Console.WriteLine(myUserService.GetUserAgeSafe(999)); // выдаст ошибку InvalidOperationException с нашим комментарием
 
             Repository myRepository = new Repository();
             Console.WriteLine(myRepository.GetUserAge(1)); // вернёт 18

@@ -24,8 +24,7 @@ namespace ExceptionsHierarchy
             }
             catch // если при попытке достать элемент по несуществующему/некорректному id возникнет ошибка
             {
-                var e = new KeyNotFoundException();
-                throw e;
+                throw new KeyNotFoundException();
             }            
         }
     }
