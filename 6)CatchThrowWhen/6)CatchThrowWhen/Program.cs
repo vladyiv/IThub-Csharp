@@ -42,7 +42,8 @@ namespace _6_CatchThrowWhen
             Console.WriteLine("Первый массив");
             Console.WriteLine(SumValidNumbers(["10", "", "abc", "20"])); // возвращает 30
             Console.WriteLine("\nВторой массив");
-            Console.WriteLine(SumValidNumbers(["99999999999", "1", "abc"])); // срабатывает ошибка на первом элементе, и программа даже не доходит до следующих элементов
+            Console.WriteLine(SumValidNumbers(["99999999999", "1", "abc"])); // срабатывает ошибка на первом элементе,
+                                                                             // и программа даже не доходит до следующих элементов
         }
     }
 }
