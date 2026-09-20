@@ -19,11 +19,10 @@
         static void Main(string[] args)
         {
             Card[] deck = new Card[5];
-            deck[0] = new Card { Suit = Suit.Spades, Rank = Rank.Jack };            
+            deck[0] = new Card { Suit = Suit.Hearts, Rank = Rank.King };            
 
             Card copy = deck[0];
-            Console.WriteLine("Карта из колоды до изменения копии " + deck[0]);
-            copy.Suit = Suit.Hearts;
+            Console.WriteLine("Карта из колоды до изменения копии: " + deck[0]);
             copy.Rank = Rank.Ace;
 
             Console.WriteLine("Карта из колоды после изменения копии: " + deck[0]);
