@@ -13,16 +13,18 @@
         {
             ItemSlot myItem1 = new ItemSlot();
             myItem1.ItemName = "item1";
-            myItem1.Rarity = ItemRarity.Rare;
+            myItem1.Rarity = ItemRarity.Rare;            
 
             ItemSlot myItem2 = myItem1;
+            Console.WriteLine("Слот до изменения копии: " + myItem1);
             myItem2.ItemName = "item2";
             myItem2.Rarity = ItemRarity.Legendary;
 
-            Console.WriteLine(myItem1);
-            Console.WriteLine(myItem2);
+            Console.WriteLine("Слот после изменения копии: " + myItem1);
+            Console.WriteLine("Изменённая копия: " + myItem1);
+            Console.WriteLine();
 
-            Console.WriteLine((int)ItemRarity.Epic);
+            Console.WriteLine("Бонус эпического предмета: +" + (int)ItemRarity.Epic);
 
             CheckRarity("Rare");
             CheckRarity("Mythic");
