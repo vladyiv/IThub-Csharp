@@ -21,7 +21,7 @@
             myItem2.Rarity = ItemRarity.Legendary;
 
             Console.WriteLine("Слот после изменения копии: " + myItem1);
-            Console.WriteLine("Изменённая копия: " + myItem1);
+            Console.WriteLine("Изменённая копия: " + myItem2);
             Console.WriteLine();
 
             Console.WriteLine("Бонус эпического предмета: +" + (int)ItemRarity.Epic);
