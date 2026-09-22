@@ -15,4 +15,5 @@
 | `Triangle` | выводятся `Area()`, `Perimeter()` и дополнительно `Draw()` |
 
 
-<img width="323" height="298" alt="Снимок экрана 2026-09-22 в 13 37 57" src="https://github.com/user-attachments/assets/6034ca88-61ea-4695-98aa-8041403aa58b" />
+<img width="1450" height="663" alt="Снимок экрана 2026-09-22 в 14 46 59" src="https://github.com/user-attachments/assets/207367de-5fa1-48c0-bd3c-953e688ca0d4" />
+
