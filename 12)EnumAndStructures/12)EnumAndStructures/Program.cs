@@ -9,6 +9,22 @@
             else
                 Console.WriteLine("Несуществующая редкость — без исключения");
         }
+        public static void CheckRarityException(string r)
+        {
+            try
+            {
+                Enum.Parse<ItemRarity>(r);
+                Console.WriteLine($"Редкость {r.ToUpper()} существует");
+            }
+            catch
+            {
+                Console.WriteLine($"Редкость {r} не найдена!");
+            }
+            finally
+            {
+                Console.WriteLine("Обработка завершена");
+            }
+        }
         static void Main(string[] args)
         {
             ItemSlot myItem1 = new ItemSlot();
@@ -28,6 +44,9 @@
 
             CheckRarity("Rare");
             CheckRarity("Mythic");
+
+            CheckRarityException(Console.ReadLine());
+            CheckRarityException(Console.ReadLine());
         }
     }
 }
