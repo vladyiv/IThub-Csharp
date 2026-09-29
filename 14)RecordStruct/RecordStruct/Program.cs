@@ -14,25 +14,34 @@
     {
         public static Vector3 createVector()
         {
-            try
-            {
-                Console.Write("Введите координату X: ");
-                int x = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Введите координату Y: ");
-                int y = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Введите координату Z: ");
-                int z = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine($"Новый вектор со значениями ({x}, {y}, {z}) создан!");
-                Console.WriteLine();
-                return new Vector3(x, y, z);
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("Неверный формат введённых данных!");
-                Console.WriteLine($"Новый вектор со значениями (0, 0, 0) создан!");
-                Console.WriteLine();
-                return new Vector3(0, 0, 0);
-            }
+            bool created = false;
+            int x = 0, y = 0, z = 0;
+            while (!created)
+                try
+                {
+                    Console.Write("Введите координату X: ");
+                    x = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Введите координату Y: ");
+                    y = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Введите координату Z: ");
+                    z = Convert.ToInt32(Console.ReadLine());
+                    created = true;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Неверный формат введённых данных!");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Введено слишком большое число!");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Ошибка! " + e.Message);
+                }
+            Console.WriteLine($"Вектор со значениями ({x}, {y}, {z}) создан!");
+            Console.WriteLine();
+            return new Vector3(x, y, z);            
         }
         static void Main(string[] args)
         {
@@ -46,7 +55,7 @@
 
             Vector3 v3 = v1 with { Z = 0 };
             Console.WriteLine("v1 (оригинал): " + v1);
-            Console.WriteLine("v3 (копия): " + v3);
+            Console.WriteLine("v3 (копия, Z = 0): " + v3);
             Console.WriteLine($"Сравниваем v1 и v3: {v1 == v3}.");
             Console.WriteLine();
 
@@ -54,9 +63,9 @@
             Console.WriteLine($"Переменные, взятые из вектора v3: x = {x}, y = {y}, z = {z}.");
 
             Vector3Struct v4 = new Vector3Struct(1, 1, 1);
-            Console.WriteLine(v4);
+            Console.WriteLine($"v4: {v4}");
             v4.X = 10;
-            Console.WriteLine(v4);
+            Console.WriteLine($"v4 после изменения (X = 10): {v4}");
             // v3.X = 10;
         }
     }
