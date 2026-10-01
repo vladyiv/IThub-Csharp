@@ -16,6 +16,18 @@
             _ => "Неизвестное событие."
         };
 
+        public static void ShowEvents()
+        {
+            Console.WriteLine("Все события:");
+            Console.WriteLine("- Атака с силой > 50 → \"КРИТИЧЕСКИЙ УДАР!\"");
+            Console.WriteLine("- Обычная атака → \"Персонаж А атаковал Персонажа Б. - X HP!\"");
+            Console.WriteLine("- Персонаж исцелил самого себя → \" Персонаж А подлечился сам. + X HP.\"");
+            Console.WriteLine("- Персонаж А исцелил персонажа Б → \"Персонаж А подлечил Персонажа Б. + Х HP.\"");
+            Console.WriteLine("- Персонаж умер → \"Персонаж погиб :(\"");
+            Console.WriteLine("- Все остальные события → \"Неизвестное событие\".");
+            Console.WriteLine();
+        }
+
         public static void ShowAttackEvent()
         {
             bool created = false;
@@ -49,6 +61,7 @@
             }
             AttackEvent attackEvent = new AttackEvent(a, t, d);
             Console.WriteLine(ToLogLine(attackEvent));
+            Console.WriteLine();
         }
 
         public static void ShowHealEvent()
@@ -97,32 +110,35 @@
 
         static void Main(string[] args)
         {
-            Console.WriteLine("┌─ Выберите действие  ──────────────────────────────┐");
-            Console.WriteLine("|  1 - показать все возможные события\t\t    |");
-            Console.WriteLine("|  2 - произвести атаку \t\t\t    |");
-            Console.WriteLine("|  3 - исцелить кого-нибудь\t\t\t    |");
-            Console.WriteLine("|  4 - убить кого-нибудь :) \t\t\t    |");
-            Console.WriteLine("|  Чтобы выйти, введите любой другой символ\t    |");
-            Console.WriteLine("└───────────────────────────────────────────────────┘");
-            Console.WriteLine();
-
-            switch (Console.ReadLine())
+            while (true)
             {
-                case "1":
-                    ShowOutcomes();
-                    break;
-                case "2":
-                    ShowAttackEvent();
-                    break;
-                case "3":
-                    ShowHealEvent();
-                    break;
-                case "4":
-                    ShowDeathEvent();
-                    break;
-                default:
-                    Environment.Exit(0);
-                    break;
+                Console.WriteLine("┌─ Выберите действие  ──────────────────────────────┐");
+                Console.WriteLine("|  1 - показать все возможные события\t\t    |");
+                Console.WriteLine("|  2 - произвести атаку \t\t\t    |");
+                Console.WriteLine("|  3 - исцелить кого-нибудь\t\t\t    |");
+                Console.WriteLine("|  4 - убить кого-нибудь :) \t\t\t    |");
+                Console.WriteLine("|  Чтобы выйти, введите любой другой символ\t    |");
+                Console.WriteLine("└───────────────────────────────────────────────────┘");
+                Console.WriteLine();
+
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                        ShowEvents();
+                        break;
+                    case "2":
+                        ShowAttackEvent();
+                        break;
+                    case "3":
+                        ShowHealEvent();
+                        break;
+                    case "4":
+                        ShowDeathEvent();
+                        break;
+                    default:
+                        Environment.Exit(0);
+                        break;
+                }
             }
         }
     }
