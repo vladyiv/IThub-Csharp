@@ -64,9 +64,9 @@
 
             Vector3Struct v4 = new Vector3Struct(1, 1, 1);
             Console.WriteLine($"v4: {v4}");
-            v4.X = 10;
-            Console.WriteLine($"v4 после изменения (X = 10): {v4}");
-            // v3.X = 10;
+            v4.X = 99;
+            Console.WriteLine($"v4 после изменения (X = 99): {v4}");
+            // v3.X = 99;
         }
     }
 }
