@@ -56,8 +56,7 @@
         }
         static void Main(string[] args)
         {
-            bool exit = false;
-            while (!exit)
+            while (true)
             {
                 Console.WriteLine("┌───── Выберите действие  ──────────────────────────┐");
                 Console.WriteLine("|  1 - показать все возможные исходы боя\t    |");
