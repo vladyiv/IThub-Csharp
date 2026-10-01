@@ -18,7 +18,7 @@
 | `(10, 30)` | `"defender в большом преимуществе"` |
 | `(40, 50)` | результат из ветки `_` |
 
-<img width="1352" height="574" alt="Снимок экрана 2026-10-01 в 09 59 59" src="https://github.com/user-attachments/assets/638fe17a-1fcc-4762-861e-5bdd1c3df5ee" />
+<img width="1653" height="645" alt="Снимок экрана 2026-10-01 в 11 39 20" src="https://github.com/user-attachments/assets/dfd1ff4b-4573-450e-8458-09bbb8ea6be1" />
 
 <img width="381" height="151" alt="Снимок экрана 2026-10-01 в 10 00 38" src="https://github.com/user-attachments/assets/e4b62070-ffb0-4911-b99c-b5117a99cbec" />
 <img width="360" height="143" alt="Снимок экрана 2026-10-01 в 10 00 45" src="https://github.com/user-attachments/assets/ad013afb-08d3-4a61-ba72-49b22aceecb4" />
