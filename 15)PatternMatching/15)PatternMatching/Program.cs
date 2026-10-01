@@ -37,6 +37,10 @@
                 {
                     Console.WriteLine("Введено слишком большое число!");
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Ошибка! " + e.Message);
+                }
             }
             Console.WriteLine(BattleOutcome((a, d)));
             Console.WriteLine();
@@ -77,7 +81,6 @@
                         Environment.Exit(0);
                         break;
                 }
-
             }
         }
     }
