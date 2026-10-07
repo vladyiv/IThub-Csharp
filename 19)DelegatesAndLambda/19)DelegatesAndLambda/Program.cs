@@ -1,15 +1,34 @@
-﻿namespace _17__ActionFuncPredicate
+﻿namespace _19_DelegatesAndLambda
 {
     internal class Program
     {
+        private static string SafeInputString()
+        {
+            string a = "";
+            while (a == "")
+            {
+                a = Console.ReadLine();
+                if (a == "") Console.WriteLine("Пустая строка не принимается!");
+            }
+            return a;
+        }
+
+        public static List<string> AddToList()
+        {
+            List<string> list = new List<string>();
+            Console.WriteLine("Сколько сообщений вы хотите ввести в список?");
+            int n = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("Введите cообщение: ");
+                list.Add(Console.ReadLine());
+            }
+            return list;
+        }
         static void Main(string[] args)
         {
-            Console.WriteLine("Перед началом нужно заполнить список пользователей!");
-            List<string> usernames = HelpingClass.AddToList(new List<string>());
-
-            Action<string> welcome = name => Console.WriteLine($"Добрый день, {name}!");
-            Func<string, string> normalize = name => name.ToLower();
-            Predicate<string> isTooShort = name => name.Length < 3;
+            Console.WriteLine("Для начала нужно заполнить список.");
+            List<string> messages = AddToList();
 
             while (true)
             {
@@ -25,25 +44,19 @@
                 switch (Console.ReadLine())
                 {
                     case "1":
-                        HelpingClass.Welcome(welcome, usernames);
+                        
                         break;
                     case "2":
-                        HelpingClass.Normalize(normalize);
+                        
                         break;
                     case "3":
-                        HelpingClass.IsTooShort(isTooShort, usernames);
+                        
                         break;
                     default:
                         Environment.Exit(0);
                         break;
                 }
             }
-
-            //bool isValidName(string name) => name.Length > 2;
-            //Predicate<string> predicate = isValidName;
-            //Func<string, bool> func = isValidName;
-
-            //Predicate<string> mixed = func;
         }
     }
 }
