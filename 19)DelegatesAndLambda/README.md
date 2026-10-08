@@ -32,5 +32,5 @@
 | после преобразования | `"[LOG] ПРИВЕТ"`, `"[LOG] ДО СВИДАНИЯ"` (с вашим префиксом) |
 | объединённое действие | значения выведены на экран И сохранены в списке (2 элемента) |
 
-<img width="1622" height="759" alt="Снимок экрана 2026-10-08 в 12 05 17" src="https://github.com/user-attachments/assets/3002f646-7ec2-4cea-ae23-d7a2db1c6dbc" />
+<img width="1698" height="903" alt="Снимок экрана 2026-10-08 в 14 00 42" src="https://github.com/user-attachments/assets/f07f41d5-0cac-4c18-a22a-1b6e3a3d780f" />
 
