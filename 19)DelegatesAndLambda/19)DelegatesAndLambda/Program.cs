@@ -2,24 +2,12 @@
 {
     internal class Program
     {
-        public static List<string> AddToList()
-        {
-            List<string> list = new List<string>();
-            Console.WriteLine("Сколько сообщений вы хотите ввести в список?");
-            int n = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write("Введите cообщение: ");
-                list.Add(Console.ReadLine());
-            }
-            return list;
-        }
         static void Main(string[] args)
         {
             List<string> history = new List<string>();
 
             Console.WriteLine("Для начала нужно заполнить список.");
-            List<string> messages = AddToList();            
+            List<string> messages = Logic.AddToList();            
 
             Func<string, bool> isValidLength = message => message.Length > 3;
 
