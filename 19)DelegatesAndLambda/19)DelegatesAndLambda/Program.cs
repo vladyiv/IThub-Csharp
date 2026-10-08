@@ -14,12 +14,11 @@
 
             Func<string, string> messageToLog = message => $"[LOG] {message.ToUpper()}";
 
-            Action<string> printResult = result => Console.WriteLine(result);
-
-            Action<string> saveResult = result => history.Add(result);
-
-            Action<string> reportMessage = printResult;
-            reportMessage += saveResult;
+            Action<string> reportMessage = result =>
+            {
+                Console.WriteLine(result);
+                history.Add(result);
+            };
 
             Console.WriteLine();
             Console.WriteLine($"Вывод сообщений не короче {minLength} символов в верхнем регистре:");

@@ -13,12 +13,12 @@
 
             Func<int, int> squareNum = num => num * num;
 
-            Action<int> printResult = result => Console.WriteLine($"[LOG] {result}");
-
-            Action<int> saveResult = result => history.Add(result);
-
-            Action<int> reportMessage = printResult;
-            reportMessage += saveResult;
+            Action<int> reportMessage = result =>
+            {
+                Console.WriteLine($"[LOG] {result}");
+                history.Add(result);
+            };
+           
 
             Console.WriteLine();
             Console.WriteLine("Вывод чётных чисел, возведённых в квадрат:");
