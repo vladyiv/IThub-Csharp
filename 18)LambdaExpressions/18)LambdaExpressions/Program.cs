@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            int factor = 10;
+            const int countNumber = 3; // по условию лямбда вызывается 3 раза
+            int factor = 10; // ...
+
             while (true)
             {
                 Console.WriteLine();
@@ -62,7 +64,7 @@
 
                         List<Action> actions = new List<Action>();
                         Console.WriteLine("Изменение i в цикле:");
-                        for (int i = 0; i < 3; i++)
+                        for (int i = 0; i < countNumber; i++)
                         {
                             actions.Add(() => Console.WriteLine($"i = {i}."));
                             Console.WriteLine($"i = {i}.");
@@ -78,7 +80,7 @@
 
                         List<Action> actionsFixed = new List<Action>();
                         Console.WriteLine("Изменение i и n в цикле:");
-                        for (int i = 0; i < 3; i++)
+                        for (int i = 0; i < countNumber; i++)
                         {
                             int n = i;
                             actionsFixed.Add(() => Console.WriteLine($"i = {i}, n = {n}."));

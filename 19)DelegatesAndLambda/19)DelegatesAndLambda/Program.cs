@@ -2,17 +2,6 @@
 {
     internal class Program
     {
-        private static string SafeInputString()
-        {
-            string a = "";
-            while (a == "")
-            {
-                a = Console.ReadLine();
-                if (a == "") Console.WriteLine("Пустая строка не принимается!");
-            }
-            return a;
-        }
-
         public static List<string> AddToList()
         {
             List<string> list = new List<string>();
@@ -27,36 +16,31 @@
         }
         static void Main(string[] args)
         {
+            List<string> history = new List<string>();
+
             Console.WriteLine("Для начала нужно заполнить список.");
-            List<string> messages = AddToList();
+            List<string> messages = AddToList();            
 
-            while (true)
+            Func<string, bool> isValidLength = message => message.Length > 3;
+
+            Func<string, string> messageToLog = message => $"[LOG] {message.ToUpper()}";
+
+            Action<string> printResult = result => Console.WriteLine(result);
+
+            Action<string> saveResult = result => history.Add(result);
+
+            Action<string> reportMessage = printResult;
+            reportMessage += saveResult;
+
+            Console.WriteLine();
+            foreach (string msg in messages)
             {
-                Console.WriteLine();
-                Console.WriteLine("┌─ Выберите действие  ────────────────────────────────┐");
-                Console.WriteLine("|  1 - поприветствовать всех пользователей            |");
-                Console.WriteLine("|  2 - привести имя к нижнему регистру                |");
-                Console.WriteLine("|  3 - найти первого пользователя с коротким именем   |");
-                Console.WriteLine("|  Чтобы выйти, введите любой другой символ           |");
-                Console.WriteLine("└─────────────────────────────────────────────────────┘");
-                Console.WriteLine();
-
-                switch (Console.ReadLine())
+                if (isValidLength(msg))
                 {
-                    case "1":
-                        
-                        break;
-                    case "2":
-                        
-                        break;
-                    case "3":
-                        
-                        break;
-                    default:
-                        Environment.Exit(0);
-                        break;
+                    reportMessage(messageToLog(msg));
                 }
             }
+            Console.WriteLine($"Количество записей в истории: {history.Count}");
         }
     }
 }
