@@ -6,7 +6,7 @@ namespace _1_NumbersProcessing
 {
     internal class Logic
     {
-        private static int SafeInputInt()
+        private static int SafeInputIntList()
         {
             int a = 0;
             while (a == 0)
@@ -31,15 +31,42 @@ namespace _1_NumbersProcessing
             }
             return a;
         }
+
+        private static int SafeInputIntCount()
+        {
+            int a = 0;
+            while (a <= 0)
+            {
+                try
+                {
+                    a = Convert.ToInt32(Console.ReadLine());
+                    if (a <= 0) Console.WriteLine("Число должно быть положительным!");
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Неверный формат данных!");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Введено слишком большое число!");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Ошибка! " + e.Message);
+                }
+            }
+            return a;
+        }
+
         public static List<int> AddToList()
         {
             List<int> list = new List<int>();
             Console.WriteLine("Сколько чисел вы хотите ввести в список?");
-            int n = SafeInputInt();
+            int n = SafeInputIntCount();
             for (int i = 0; i < n; i++)
             {
                 Console.Write("Введите число: ");
-                int a = SafeInputInt();
+                int a = SafeInputIntList();
                 list.Add(a);
             }
             return list;
