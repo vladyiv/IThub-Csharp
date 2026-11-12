@@ -13,6 +13,9 @@
 | группировка по курсу | количество студентов и средний балл соответствуют фактическим данным по курсу |
 | сортировка по убыванию среднего балла | курс с наибольшим средним баллом — первый в выводе |
 
-<img width="860" height="951" alt="Снимок экрана 2026-11-09 в 21 02 15" src="https://github.com/user-attachments/assets/bf3db6a7-fab0-4ef1-b7ee-2b592fbc3dfb" />
-<img width="1067" height="1088" alt="Снимок экрана 2026-11-09 в 21 02 35" src="https://github.com/user-attachments/assets/f0df691d-ba62-4e0a-acb6-85a415362cfb" />
-<img width="1184" height="363" alt="Снимок экрана 2026-11-09 в 21 02 55" src="https://github.com/user-attachments/assets/1f533919-a77c-4633-bbe0-88218d7cdca1" />
+<img width="972" height="1177" alt="Снимок экрана 2026-11-12 в 13 05 52" src="https://github.com/user-attachments/assets/45ce54b3-e701-4b9b-bd7b-baa621212c93" />
+<img width="892" height="498" alt="Снимок экрана 2026-11-12 в 13 07 21" src="https://github.com/user-attachments/assets/0752939f-cb74-4e3b-b377-094e0df175ad" />
+<img width="1249" height="1022" alt="Снимок экрана 2026-11-12 в 13 22 01" src="https://github.com/user-attachments/assets/0642b73d-f812-4a6e-bbf9-5666eac308e7" />
+
+
+
