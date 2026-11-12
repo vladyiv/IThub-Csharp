@@ -55,11 +55,11 @@ namespace _37_LINQRequests
                         break;
 
                     case "3":
-                        foreach (Student student in students.OrderBy(s => s.ID)) Console.WriteLine(student);
+                        foreach (Student s in students.OrderBy(s => s.ID)) Console.WriteLine(s);
                         break;
 
                     case "4":
-                        foreach (Enrollment e in enrollment) Console.WriteLine(e);
+                        foreach (Enrollment e in enrollment.OrderBy(s => s.StudentID)) Console.WriteLine(e);
                         break;
 
                     case "5":

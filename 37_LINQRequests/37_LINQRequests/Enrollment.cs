@@ -15,6 +15,6 @@ namespace _37_LINQRequests
             CourseName = courseName;
             Grade = grade;
         }
-        public override string ToString() => $"ID студента: {StudentID}, курс: {CourseName}, оценка: {Grade}.";
+        public override string ToString() => $"ID студента: {StudentID}, дисциплина: {CourseName}, оценка: {Grade}.";
     }
 }
