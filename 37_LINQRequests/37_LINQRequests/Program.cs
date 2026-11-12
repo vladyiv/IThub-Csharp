@@ -33,13 +33,13 @@ namespace _37_LINQRequests
             {
                 Console.WriteLine();
                 Console.WriteLine("┌─ Выберите действие  ────────────────────────────────────────────┐");
-                Console.WriteLine("|  1 - Заполнить список студентов                                 |");
-                Console.WriteLine("|  2 - Заполнить список курсов                                    |");
+                Console.WriteLine("|  1 - Дополнить список студентов                                 |");
+                Console.WriteLine("|  2 - Дополнить список дисциплин                                 |");
                 Console.WriteLine("|  3 - Вывести список студентов                                   |");
-                Console.WriteLine("|  4 - Вывести список курсов                                      |");
-                Console.WriteLine("|  5 - Вывести сводку зачисления (студент, курс)                  |");
+                Console.WriteLine("|  4 - Вывести список дисциплин                                   |");
+                Console.WriteLine("|  5 - Вывести сводку зачисления (студент, дисциплина, оценка)    |");
                 Console.WriteLine("|  6 - Вывести сводку успеваемости                                |");
-                Console.WriteLine("|  (курс, средний балл, количество студентов)                     |");
+                Console.WriteLine("|  (дисциплина, средний балл, количество студентов)               |");
                 Console.WriteLine("|  Чтобы выйти, введите любой другой символ                       |");
                 Console.WriteLine("└─────────────────────────────────────────────────────────────────┘");
                 Console.WriteLine();
@@ -55,7 +55,7 @@ namespace _37_LINQRequests
                         break;
 
                     case "3":
-                        foreach (Student student in students) Console.WriteLine(student);
+                        foreach (Student student in students.OrderBy(s => s.ID)) Console.WriteLine(student);
                         break;
 
                     case "4":
@@ -63,21 +63,37 @@ namespace _37_LINQRequests
                         break;
 
                     case "5":
-                        var summaryEnrollment= students
-                            .Join(enrollment, s => s.ID, e => e.StudentID, (s, e) => new { e.CourseName, e.StudentID, e.Grade })
-                            .GroupBy(e => e.CourseName)
-                            .Select(g => new { CourseName = g.Key, Average = Math.Round(g.Average(g => g.Grade), 2), Count = g.Count() })
-                            .OrderByDescending(g => g.Average);
-                        foreach (var s in summaryEnrollment) Console.WriteLine($"Дисциплина: {s.CourseName}, средний балл: {s.Average}, количество учащихся: {s.Count};");
-                        break;
+                        var summaryGrade = students
+                            .Join(enrollment, s => s.ID, e => e.StudentID, (s, e) => new { s.ID, s.Name, e.CourseName, e.Grade })
+                            .Select(g => new
+                            {
+                                g.ID,
+                                g.Name,
+                                g.CourseName,
+                                g.Grade
+                            })
+                            .OrderBy(g => g.ID);
+
+                        foreach (var s in summaryGrade) Console.WriteLine($"Студент: {s.Name}, дисциплина: {s.CourseName}, оценка {s.Grade}/100;");
                         break;
 
                     case "6":
-                        var summaryGrade = students
-                            .Join(enrollment, s => s.ID, e => e.StudentID, (s, e) => new { s.ID, s.Name, e.CourseName, e.Grade })
-                            .Select(g => new { g.ID, g.Name, g.CourseName, g.Grade } )
-                            .OrderBy(g => g.ID);
-                        foreach (var s in summaryGrade) Console.WriteLine($"Студент: {s.Name}, дисциплина: {s.CourseName}, оценка {s.Grade}/100;");
+                        var summaryEnrollment = students
+                            .Join(enrollment, s => s.ID, e => e.StudentID, (s, e) => new { e.CourseName, e.StudentID, e.Grade, s.Name })
+                            .GroupBy(e => e.CourseName)
+                            .Select(g => new
+                            {
+                                CourseName = g.Key,
+                                Average = Math.Round(g.Average(g => g.Grade), 2),
+                                Count = g.Count(),
+                                StudentNames = string.Join(", ", g.Select(n => n.Name))
+                            })
+                            .OrderByDescending(g => g.Average);
+
+                        foreach (var student in summaryEnrollment)
+                        {
+                            Console.WriteLine($"Дисциплина: {student.CourseName}, средний балл: {student.Average}, количество учащихся: {student.Count}, ({student.StudentNames})");
+                        }
                         break;
 
                     default:

@@ -54,7 +54,7 @@ namespace _37_LINQRequests
         {
             Console.Write("Введите ID студента: ");
             int studentID = Logic.SafeInputInt();
-            Console.Write("Введите название курса: ");
+            Console.Write("Введите название дисциплины: ");
             string courseName = Logic.SafeInputString();
             Console.Write("Введите оценку: ");
             int grade = Logic.SafeInputInt();

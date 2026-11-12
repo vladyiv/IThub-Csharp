@@ -6,25 +6,34 @@
         {
             List<Employee> employees = new List<Employee>
             {
-                new Employee("Влада", 0, "01.09.2026"),
-                new Employee("Дарья", 1000000, "10.11.2026"),
-                new Employee("Алина", 750000, "01.01.2024"),
-                new Employee("Андрей", 500000, "02.02.2020")
+                new Employee(1, "Влада", 0, "01.09.2024"),
+                new Employee(5, "Дарья", 1000000, "9.11.2026"),
+                new Employee(3, "Алина", 750000, "01.01.2026"),
+                new Employee(4, "Андрей", 500000, "02.02.2020"),
+                new Employee(2, null, 50000, null)
             };
+
+            void PrintEmployees()
+            {
+                foreach (Employee employee in employees) Console.WriteLine(employee);
+                Console.WriteLine();
+            }
 
             Console.WriteLine("Сортировка по зарплате (по умолчанию):");
             employees.Sort();
-            foreach (Employee employee in employees) Console.WriteLine(employee);
-            Console.WriteLine();
+            PrintEmployees();
 
             Console.WriteLine("Сортировка по дате приёма на работу (HireDateComparer):");
             employees.Sort(new HireDateComparer());
-            foreach (Employee employee in employees) Console.WriteLine(employee);
-            Console.WriteLine();
+            PrintEmployees();
 
             Console.WriteLine("Сортировка по имени (лямбда):");
             employees.Sort((Employee a, Employee b) => a.Name.CompareTo(b.Name));
-            foreach (Employee employee in employees) Console.WriteLine(employee);         
+            PrintEmployees();
+;
+            Console.WriteLine("Сортировка по ID (лямбда):");
+            employees.Sort((Employee a, Employee b) => a.ID.CompareTo(b.ID));
+            PrintEmployees();
         }
     }
 }
