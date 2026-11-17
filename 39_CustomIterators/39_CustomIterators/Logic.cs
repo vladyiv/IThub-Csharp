@@ -9,6 +9,32 @@ namespace _39_CustomIterators
         public static int SafeInputInt()
         {
             int a = 0;
+            bool done = false;
+            while (!done)
+            {
+                try
+                {
+                    a = Convert.ToInt32(Console.ReadLine());
+                    done = true;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Неверный формат данных!");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Введено слишком большое число!");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Ошибка! " + e.Message);
+                }
+            }
+            return a;
+        }
+        public static int SafeInputIntPos()
+        {
+            int a = 0;
             while (a <= 0)
             {
                 try
@@ -31,6 +57,7 @@ namespace _39_CustomIterators
             }
             return a;
         }
+
         public static string SafeInputString()
         {
             string a = "";
