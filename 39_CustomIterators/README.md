@@ -11,3 +11,14 @@
 | :--- | :--- |
 | `foreach` по корневой категории | все узлы дерева, включая узлы третьего уровня вложенности |
 | `Leaves()` | только узлы без собственных подкатегорий, с любого уровня дерева |
+
+#### За основу взяла карту специальностей IThub
+<img width="2560" height="2400" alt="image" src="https://github.com/user-attachments/assets/304c0804-09e4-4769-9b73-95f0b5d3779b" />
+
+<img width="1512" height="696" alt="Снимок экрана 2026-11-17 в 16 26 34" src="https://github.com/user-attachments/assets/1c77cc83-2a5a-48e8-a09e-6983dcf6bfc9" />
+
+<img width="1188" height="1130" alt="Снимок экрана 2026-11-17 в 16 26 55" src="https://github.com/user-attachments/assets/945171a3-7441-4fba-a3b4-a619e310c264" />
+
+<img width="930" height="880" alt="Снимок экрана 2026-11-17 в 16 27 14" src="https://github.com/user-attachments/assets/2bac5bdb-34c3-4a27-bcb1-d64872b1c537" />
+
+<img width="912" height="581" alt="Снимок экрана 2026-11-17 в 16 27 35" src="https://github.com/user-attachments/assets/0b458d40-319a-4aa4-9037-f72177550b60" />
