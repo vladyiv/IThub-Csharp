@@ -15,7 +15,6 @@ namespace _39_CustomIterators
 
         public IEnumerator<Category> GetEnumerator()
         {
-
             if (Subcategories.Count == 0)
             {
                 Console.Write("  - ");
@@ -79,19 +78,19 @@ namespace _39_CustomIterators
             string indent = "";
             for (int i = 0; i < (currentLevel - 1) * 2; i++) indent += " ";
 
-            Console.Write($"{indent}Сколько подкатегорий добавить в \"{this.Name}\"? ");
+            Console.Write($"{indent}Сколько подкатегорий добавить в \"{Name}\"? ");
             int count = Logic.SafeInputInt();
 
             for (int i = 0; i < count; i++)
             {
-                Console.Write($"{indent}Введите название подкатегории в \"{this.Name}\": ");
+                Console.Write($"{indent}Введите название подкатегории в \"{Name}\": ");
                 string name = Logic.SafeInputString();
 
                 Category newSubcategory = new Category(name);
-                if (this.Subcategories == null)
-                    this.Subcategories = new List<Category>();
+                if (Subcategories == null)
+                    Subcategories = new List<Category>();
 
-                this.Subcategories.Add(newSubcategory);
+                Subcategories.Add(newSubcategory);
 
                 if (currentLevel < maxLevels)
                 {
