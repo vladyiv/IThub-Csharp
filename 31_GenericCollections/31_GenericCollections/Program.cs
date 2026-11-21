@@ -13,6 +13,7 @@
                 document.Add(line);
                 printQueue.Enqueue(line);
             }
+
             void Print()
             {
                 if (printQueue.Count == 0)
@@ -20,9 +21,9 @@
                     Console.WriteLine("Очередь печати пуста!");
                     return;
                 }
-                string line = printQueue.Dequeue();
-                Console.WriteLine($"Распечатано: {line}");
+                Console.WriteLine($"Распечатано: {printQueue.Dequeue()}");
             }
+
             void Delete()
             {
                 if (document.Count == 0)
@@ -34,34 +35,26 @@
                 undoHistory.Push(document[index]);
                 document.RemoveAt(index);
             }
-            void CancelDelete()
-            {
-                if (undoHistory.Count == 0)
-                {
-                    Console.WriteLine("Ничего не удалялось, нечего восстановить");
-                    return;
-                }
-                document.Add(undoHistory.Pop());
-            }
+
+            void CancelDelete() { document.Add(undoHistory.Pop()); }            
 
             AddLine("aaa");
             AddLine("bbb");
             AddLine("ccc");
             AddLine("ddd");
 
-            Console.WriteLine("Весь документ");
-            foreach (string line in document) Console.Write(line + ' ');
-            Console.WriteLine();
+            Console.WriteLine("Весь документ:");
+            foreach (string line in document) Console.WriteLine(line);
             Console.WriteLine();
 
             Console.WriteLine("Распечатали 2 строки в порядке постановки");
             Print();
             Print();            
-            Console.WriteLine();
+            Console.WriteLine();            
 
             Delete();
             Console.WriteLine("Удалили последнюю строку");
-            foreach (string line in document) Console.Write(line + ' ');
+            foreach (string line in document) Console.WriteLine(line);
             Console.WriteLine();
 
             Console.WriteLine("Последняя удалённая строка: " + undoHistory.Peek());
@@ -69,12 +62,12 @@
 
             CancelDelete();
             Console.WriteLine("Вернули последнюю удаленную строку");
-            foreach (string line in document) Console.Write(line + ' ');
+            foreach (string line in document) Console.WriteLine(line);
             Console.WriteLine();
-            if (undoHistory.Count > 0)
-                Console.WriteLine(undoHistory.Peek());
-            else
-                Console.WriteLine("Стек пуст!");;
+
+            Console.WriteLine("Заглянули в undoHistory:");
+            try{ Console.WriteLine(undoHistory.Peek()); }
+            catch { Console.WriteLine("Стек пуст!"); };
         }
     }
 }
