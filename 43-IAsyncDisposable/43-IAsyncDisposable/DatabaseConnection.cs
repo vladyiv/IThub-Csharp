@@ -36,7 +36,7 @@ namespace _43_IAsyncDisposable
             if (!disposed)
             {
                 await Task.Delay(10);
-                Console.WriteLine("Асинхронная очистка завершена");
+                Console.WriteLine("Асинхронная очистка управляемых ресурсов");
             }
             requestsLog?.Clear();
         }
