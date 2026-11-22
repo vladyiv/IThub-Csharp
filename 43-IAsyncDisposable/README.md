@@ -18,5 +18,6 @@
 | финализатор без Dispose (эксперимент) | выводит только нативные ресурсы, НЕ управляемые |
 
 <img width="788" height="983" alt="Снимок экрана 2026-11-22 в 20 12 27" src="https://github.com/user-attachments/assets/6568f3e3-a34a-4b57-91bb-8fdaffb4256c" />
+<img width="872" height="615" alt="Снимок экрана 2026-11-22 в 21 04 42" src="https://github.com/user-attachments/assets/5a679456-5b1f-480d-9f22-49f89b8c0113" />
 <img width="747" height="533" alt="Снимок экрана 2026-11-22 в 20 13 56" src="https://github.com/user-attachments/assets/7c84e7fc-708e-4e06-9ac9-14bc859866cd" />
 <img width="753" height="557" alt="Снимок экрана 2026-11-22 в 20 14 36" src="https://github.com/user-attachments/assets/58be654a-c886-4084-a000-7db655c396a3" />
