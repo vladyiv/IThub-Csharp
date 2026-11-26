@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace _43_IAsyncDisposable
@@ -7,14 +8,15 @@ namespace _43_IAsyncDisposable
     internal class DatabaseConnection : IDisposable, IAsyncDisposable
     {
         private bool disposed;
-        List<string>? requestsLog = new();
-        private int connectionId;
+        List<string>? RequestsLog = new();
+        private int connectionId = 42;
         protected virtual void Dispose(bool disposing)
         {
             if (disposed) return;
             disposed = true;
             if (disposing)
             {
+                RequestsLog?.Clear();
                 Console.WriteLine("Синхронная очистка управляемых ресурсов");
             }
             connectionId = 0;
@@ -34,11 +36,14 @@ namespace _43_IAsyncDisposable
         protected virtual async ValueTask DisposeAsyncCore()
         {
             if (!disposed)
-            {
+            {                
+                Stopwatch sw = Stopwatch.StartNew();                
                 await Task.Delay(10);
-                Console.WriteLine("Асинхронная очистка управляемых ресурсов");
+                sw.Stop();
+                RequestsLog?.Clear();
+                Console.WriteLine($"Асинхронная очистка управляемых ресурсов - {sw.Elapsed.TotalMilliseconds:F3} мс");
             }
-            requestsLog?.Clear();
+            
         }
         ~DatabaseConnection()
         {
@@ -50,7 +55,7 @@ namespace _43_IAsyncDisposable
         {
             Console.Write("Введите адрес порта (ID подключения): ");
             connectionId = Logic.SafeInputInt();
-            requestsLog.Add($"[{connectionId}] {DateTime.Now} выполнено подключение к базе данных");
+            RequestsLog?.Add($"[{connectionId}] {DateTime.Now} выполнено подключение к базе данных");
             while (true)
             {
                 Console.WriteLine("┌─ Выберите действие  ────────────────────────────┐");
@@ -64,12 +69,12 @@ namespace _43_IAsyncDisposable
                 {
                     case "1":
                         string query = Logic.SafeInputString();
-                        requestsLog.Add($"[{connectionId}] {DateTime.Now} {query}");
+                        RequestsLog?.Add($"[{connectionId}] {DateTime.Now} {query}");
                         Console.WriteLine($"[{connectionId}] {DateTime.Now} Выполнен запрос: {query}");
                         break;
 
                     case "2":
-                        foreach (string log in requestsLog) Console.WriteLine(log);
+                        foreach (string log in RequestsLog) Console.WriteLine(log);
                         break;
                     
                     default:

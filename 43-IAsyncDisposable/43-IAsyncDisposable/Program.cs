@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static async Task Main(string[] args)
+        static async Task Main(string[] args) // сделала, чтобы выполнялся асинхронный кусок
         {
             while (true)
             {

@@ -12,7 +12,7 @@ namespace _42_IDisposable
         {
             if (disposed)
             {
-                Console.WriteLine("Dispose вызван повторно");
+                // Console.WriteLine("Dispose вызван повторно");
                 return;
             }
                 disposed = true;
